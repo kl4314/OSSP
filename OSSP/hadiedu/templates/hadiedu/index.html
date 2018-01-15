@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load staticfiles %}
+  <head>
+
+    <style>
+
+              .table4_9 table {
+                width:100%;
+                margin:15px 0;
+                border:0;
+              }
+              .table4_9 th {
+                background-color:#b4e0fe;
+                width: 300px;
+              }
+              .table4_9,.table4_9 th,.table4_9 td {
+                font-size:0.95em;
+                text-align:center;
+                padding:4px;
+                border-collapse:collapse;
+              }
+              .table4_9 th,.table4_9 td {
+                width: 300px;
+                border: 1px solid #7ecbfe;
+                border-width:1px 0 1px 0
+              }
+              .table4_9 tr {
+                border: 1px solid #7ecbfe;
+              }
+              .table4_9 tr:nth-child(odd){
+                background-color:#b4e0fe;
+              }
+              .table4_9 tr:nth-child(even){
+                background-color:#fdfdfd;
+              }
+
+                table.type11 {
+                border-collapse: separate;
+                border-spacing: 1px;
+                text-align: center;
+                line-height: 1.5;
+                margin: 20px 10px;
+            }
+            table.type11 th {
+                width: 230px;
+                padding: 10px;
+                font-weight: bold;
+                vertical-align: top;
+                color: #fff;
+                background: #ce4869 ;
+            }
+            table.type11 td {
+                width: 155px;
+                padding: 10px;
+                vertical-align: top;
+                border-bottom: 1px solid #ccc;
+                background: #eee;
+            }
+      
+
+
+            .container-4{
+              overflow: hidden;
+              width: 300px;
+              vertical-align: middle;
+              white-space: nowrap;
+            }
+
+            .container-4 input#search{
+                width: 300px;
+                height: 50px;
+                background: #2b303b;
+                border: none;
+                font-size: 10pt;
+                float: left;
+                color: #fff;
+                padding-left: 15px;
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+
+              }
+
+              .container-4 input#search::-webkit-input-placeholder {
+                     color: #65737e;
+                  }
+                   
+                  .container-4 input#search:-moz-placeholder { /* Firefox 18- */
+                     color: #65737e;  
+                  }
+                   
+                  .container-4 input#search::-moz-placeholder {  /* Firefox 19+ */
+                     color: #65737e;  
+                  }
+                   
+                  .container-4 input#search:-ms-input-placeholder {  
+                     color: #65737e;  
+                  }
+
+                  .container-4 button.icon{
+                -webkit-border-top-right-radius: 5px;
+                -webkit-border-bottom-right-radius: 5px;
+                -moz-border-radius-topright: 5px;
+                -moz-border-radius-bottomright: 5px;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+               
+                border: none;
+                background: #232833;
+                height: 50px;
+                width: 50px;
+                color: #4f5b66;
+                opacity: 0;
+                font-size: 10pt;
+               
+                -webkit-transition: all .55s ease;
+                -moz-transition: all .55s ease;
+                -ms-transition: all .55s ease;
+                -o-transition: all .55s ease;
+                transition: all .55s ease;
+              }
+              .container-4:hover button.icon, .container-4:active button.icon, .container-4:focus button.icon{
+                  outline: none;
+                  opacity: 1;
+                  margin-left: -50px;
+                }
+               
+                .container-4:hover button.icon:hover{
+                  background: white;
+                }
+
+
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>같이의 가치</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href='{% static "vendor/bootstrap/css/bootstrap.min.css"%}' rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href='{% static "vendor/font-awesome/css/font-awesome.min.css"%}' rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href='{% static "vendor/simple-line-icons/css/simple-line-icons.css" %}' rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href='{% static "css/stylish-portfolio.min.css" %}' rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+    <!-- Navigation -->
+    <a class="menu-toggle rounded" href="#">
+      <i class="fa fa-bars"></i>
+    </a>
+    <nav id="sidebar-wrapper">
+      <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+          <a class="js-scroll-trigger" href="#page-top">Start Bootstrap</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#page-top">Home</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#about">About</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#services">Services</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#portfolio">Portfolio</a>
+        </li>
+        <li class="sidebar-nav-item">
+          <a class="js-scroll-trigger" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header -->
+    <header class="masthead d-flex">
+      <div class="container text-center my-auto">
+        <h1 class="mb-1">광주 광역시 </h1>
+        <br>
+         <h1 class="mb-1" >장애인 편의 시설 학교 찾기 </h1>
+        <br>
+        <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+      </div>
+      <div class="overlay"></div>
+    </header>
+
+    <!-- About -->
+    <section class="content-section bg-light " id="about">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+
+            <h2>시 / 군 / 구 찾기</h2>
+         
+                <div class="box">
+                  <div class="container-4">
+                    <form>
+                     <input  type="search" id="search" placeholder="Search..." />
+                      <button  class="icon"><i class="fa fa-search"></i></button>
+                  </form>
+                  </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="content-section bg-primary text-white text-center" id="services">
+      <div class="container">
+        <div class="content-section-heading">
+          <h3 class="text-secondary mb-0">Services</h3>
+          <h2 class="mb-5">초 / 중 / 고</h2>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+            <h4>
+              <strong>초등학교</strong>
+            </h4>
+            <table class="type11">
+              <thead>
+              <tr>
+                  <th scope="cols">학교명</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <td><a href = ""></a></th>
+              </tr>
+              </tbody>
+          </table>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
+ 
+            <h4>
+              <strong>중학교</strong>
+            </h4>
+           <table class="type11">
+              <thead>
+              <tr>
+                  <th scope="cols">학교명</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <td><a href = ""></a></th>
+              </tr>
+              </tbody>
+          </table>
+          </div>
+          <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
+            <h4>
+              <strong>고등학교</strong>
+            </h4>
+            <table class="type11">
+              <thead>
+              <tr>
+                  <th scope="cols">학교명</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                  <td><a href = ""></a></th>
+              </tr>
+              </tbody>
+          </table>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <span class="service-icon rounded-circle mx-auto mb-3">
+              <i class="icon-mustache"></i>
+            </span>
+            <img class="img-fluid" src="img/handicapped.jpg" alt="">
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- Portfolio -->
+    <section class="content-section" id="portfolio">
+      <div class="container">
+        <div class="content-section-heading text-center">
+          <h3 class="text-secondary mb-0">Detail</h3>
+          <h2 class="mb-5">학교 세부 정보</h2>
+        </div>
+        <div class="">
+          <table class=table4_9>
+            <tr>
+              <td>SAMPLE</td><td>SAMPLE</td><td>SAMPLE</td><td>SAMPLE</td>
+            </tr>
+            <tr>
+              <td>SAMPLE</td><td>SAMPLE</td><td>SAMPLE</td><td>SAMPLE</td>
+            </tr>
+            <tr>
+              <td>SAMPLE</td><td>SAMPLE</td><td>SAMPLE</td><td>SAMPLE</td>
+            </tr>
+              <tr>
+              <td>SAMPLE</td><td>SAMPLE</td><td>SAMPLE</td><td>SAMPLE</td>
+            </tr>
+            <tr>
+              <td>SAMPLE</td><td>SAMPLE</td><td>SAMPLE</td><td>SAMPLE</td>
+            </tr>
+            </table>
+        </div>
+      </div>
+    </section>
+
+
+        <!-- Callout -->
+    <section class="callout">
+      <div class="container text-center">
+        <h2 class="mx-auto mb-5">News</h2>
+        <table class=table4_9>
+            <tr>
+              <th>제목</th><th>내용</th><th>날짜</th><th>자세히 보기</th>
+            </tr>
+            {% if items %}
+            {% for item in items %}
+            <tr>
+              <td>{{item.title}}</td><td>{{item.description}}</td><td>{{item.pubDate}}</td><td><a href = "{{item.link}}">자세히보기</a></td>
+            </tr>
+            {% endfor %}
+            {% endif %}
+          
+            </table>
+        <a class="btn btn-primary btn-xl" href="{% url 'handi:search' %}">라라라라라라</a>
+      </div>
+    </section>
+ 
+    <!-- Footer -->
+    <footer class="footer text-center">
+      <div class="container">
+        <ul class="list-inline mb-5">
+          <li class="list-inline-item">
+            <a class="social-link rounded-circle text-white mr-3" href="#">
+              <i class="icon-social-facebook"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="social-link rounded-circle text-white mr-3" href="#">
+              <i class="icon-social-twitter"></i>
+            </a>
+          </li>
+          <li class="list-inline-item">
+            <a class="social-link rounded-circle text-white" href="#">
+              <i class="icon-social-github"></i>
+            </a>
+          </li>
+        </ul>
+        <p class="text-muted small mb-0">Copyright &copy; Your Website 2017</p>
+      </div>
+    </footer>
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded js-scroll-trigger" href="#page-top">
+      <i class="fa fa-angle-up"></i>
+    </a>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/stylish-portfolio.min.js"></script>
+
+  </body>
+
+</html>
