@@ -4,3 +4,4 @@ from .models import School
 
 
 admin.site.register(School)
+

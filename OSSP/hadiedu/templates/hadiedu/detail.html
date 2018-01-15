@@ -202,10 +202,9 @@
          
                 <div class="box">
                 
-                  <form name = "did" action = '{% url "handi:search"%}' method = "POST" >
+                  <form name = "did" action = '{% url "handi:search"%}' method = "get" >
                     <input  type="text" name ="q" placeholder="Search..." />
                     <input  type="submit">
-                       {% csrf_token %}
                   </form>
                 
                 </div>
@@ -317,7 +316,7 @@
             <br>
         </div>
         <div class="">
-     {% if schools %}
+              {% if schools %}
             {% for school in schools %}
 
           <table class=table4_9>

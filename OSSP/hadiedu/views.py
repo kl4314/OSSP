@@ -31,39 +31,54 @@ def index(request):
 
 
 
-def input(request):
+def search(request):
+  
+  if request.method == 'POST':
 
-  line = []
-  line1 = []
+    q = request.POST.get('q')
 
-  f = open('장애인편의.csv', 'r', encoding='mac_roman' ,  newline='')
-  rdr = csv.reader(f)
+    eschools = School.objects.filter(address__contains = q, sname__contains = '초등')
+    mschools = School.objects.filter(address__contains = q, sname__contains = '중학')
+    hschools = School.objects.filter(address__contains = q, sname__contains = '고등')
 
-  for row in rdr:
-    line.append(row)
+
+    context ={
+    'eschools':eschools, 
+    'mschools':mschools, 
+    'hschools':hschools,  
+      }
+
+    return render(request, 'hadiedu/index.html', context)
+
+
+
+
+
+
+def detail(request):
+  if request.method == 'POST':
+    a = request.POST.get('a')
+
+    schools = School.objects.filter(sname__contains = a)
+    client_id = "DshukL7WQcANLYUiQTsY" # 네이버에서 받은 클라이언트 아이디 
+    client_secret = "p5RxLlzjyJ" # secret 넘버
+
+    encText = urllib.parse.quote("{}".format('복지')) 
+    url = "https://openapi.naver.com/v1/search/news?query=" + encText # url 입력하기 
+    movie_api_request = urllib.request.Request(url)
+    movie_api_request.add_header("X-Naver-Client-Id", client_id)
+    movie_api_request.add_header("X-Naver-Client-Secret", client_secret)
+    response = urllib.request.urlopen(movie_api_request) 
+    rescode = response.getcode()
+    if (rescode == 200):
+      response_body = response.read()
+      result = json.loads(response_body.decode('utf-8'))
+      items = result.get('items') #받아온 데이터 변수에 저장
+
+    context ={
+    'schools':schools,
+    'items':items, 
     
-  for lines in line:
-    school = School(
-      eduoffice = lines[0],
-      code = lines[3],
-      sname = lines[4],
-      diff= lines[6],
-      Enter  = lines[9],
-      parking = lines[10],
-      enhi  = lines[11],
-      hallway = lines[12],
-      hsupport = lines[13],
-      hfeces = lines[14],
-      hufine = lines[15],
-      braille = lines[16],
-      announce = lines[17],
-      alarm = lines[18],
-      address = lines[1],
-      daddress = lines[2],
-      pnum = lines[7],
-      haddress = lines[5],
-      sex = lines[8],
-     )
-    school.save()
+      }
+    return render(request, 'hadiedu/detail.html', context)
 
-return render(request, 'hadiedu/index.html')
